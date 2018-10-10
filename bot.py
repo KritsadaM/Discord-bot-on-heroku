@@ -1,11 +1,12 @@
 import discord
+import requests
 from discord.ext import commands
 import asyncio
 import os
 
 
 #GIVE YOUR BOT A PREFIX; mine is a.
-bot = commands.Bot(command_prefix="a.")
+bot = commands.Bot(command_prefix="!")
 
 
 
@@ -20,7 +21,14 @@ async def on_ready():
 @bot.command(pass_context=True)
 async def hi(ctx):
       await bot.say("Hello there"+" "+ctx.message.author.name)
-                
+
+
+@bot.command()
+async def bitcoin():
+    url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
+    response = request.get(url)
+    value = response.json() ['bpi']['USD']['rate']
+    await client.say("Bitcoin price is: $" +value)
                   
                    
 #YOU CAN USE os.environ TO HIDE YOUR BOT TOKEN: SAVE YOUR BOT TOKEN AS THE NAME YOU GAVE IN os.environ['name'] 
