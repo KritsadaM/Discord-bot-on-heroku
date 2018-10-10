@@ -28,7 +28,7 @@ async def bitcoin():
     url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
     response = requests.get(url)
     value = response.json() ['bpi']['USD']['rate']
-    await client.say("Bitcoin price is: $" +value)
+    await bot.say("Bitcoin price is: $" +value)
                   
                    
 #YOU CAN USE os.environ TO HIDE YOUR BOT TOKEN: SAVE YOUR BOT TOKEN AS THE NAME YOU GAVE IN os.environ['name'] 
