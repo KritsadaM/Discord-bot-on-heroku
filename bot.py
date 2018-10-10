@@ -26,7 +26,7 @@ async def hi(ctx):
 @bot.command()
 async def bitcoin():
     url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
-    response = request.get(url)
+    response = requests.get(url)
     value = response.json() ['bpi']['USD']['rate']
     await client.say("Bitcoin price is: $" +value)
                   
