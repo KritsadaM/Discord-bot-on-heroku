@@ -5,6 +5,8 @@ import asyncio
 import os
 
 
+client = discord.Client()
+
 #GIVE YOUR BOT A PREFIX; mine is a.
 bot = commands.Bot(command_prefix="!")
 
@@ -30,6 +32,17 @@ async def bitcoin():
     value = response.json() ['bpi']['USD']['rate']
     await bot.say("Bitcoin price is: $" +value)
                   
+@client.event
+async def on_ready():
+    print("The bot is ready!")
+    await client.change_presence(game=discord.Game(name="Making a bot"))
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content == "Hello":
+        await client.send_message(message.channel, "Hello"+" "+message.author.name)
                    
 #YOU CAN USE os.environ TO HIDE YOUR BOT TOKEN: SAVE YOUR BOT TOKEN AS THE NAME YOU GAVE IN os.environ['name'] 
 bot.run(os.environ['BOT_TOKEN'])
