@@ -50,4 +50,5 @@ async def on_message(message):
         await client.send_message(message.channel, "Bitcoin price is: $" + value)
 
 #YOU CAN USE os.environ TO HIDE YOUR BOT TOKEN: SAVE YOUR BOT TOKEN AS THE NAME YOU GAVE IN os.environ['name'] 
-bot.run(os.environ['BOT_TOKEN'])
+#bot.run(os.environ['BOT_TOKEN'])
+client.run(os.environ['BOT_TOKEN'])
