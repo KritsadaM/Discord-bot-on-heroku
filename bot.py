@@ -84,6 +84,41 @@ class Ragnarok:
         """คำสั่งเปิดเว็ปคำนวนดาเมจของนกฮันเตอร์"""
         await bot.say("https://misc.prtwiki.in.th/falcon")
 
+    @commands.command(pass_context=True, no_pm=True)
+    async def trap(self, ctx):
+        """คำสั่งเปิดเว็ปคำนวนดาเมจของฮันเตอร์ trap"""
+        await bot.say("https://misc.prtwiki.in.th/trap")
+    
+    @commands.command(pass_context=True, no_pm=True)
+    async def ทำอาหาร(self, ctx):
+        """คำสั่งเปิดเว็ปสำหรับทำอาหาร"""
+        await bot.say("https://www.prtwiki.in.th/wiki/cooking")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def เปลี่ยนอาชีพ(self, ctx):
+        """คำสั่งเปิดเว็ปเควสเปลี่ยนอาชีพ"""
+        await bot.say("https://www.prtwiki.in.th/wiki/job-change")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def แต่งงาน(self, ctx):
+        """คำสั่งเปิดเว็ปเควสแต่งงาน"""
+        await bot.say("https://www.prtwiki.in.th/wiki/wedding-system")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def เจาะรู(self, ctx):
+        """คำสั่งเปิดเว็ปวิธีเจาะรู"""
+        await bot.say("https://www.prtwiki.in.th/wiki/slot-enchant")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def ตารางธาตุ(self, ctx):
+        """คำสั่งเปิดเว็ปตารางแพ้ธาตุ"""
+        await bot.say("https://www.prtwiki.in.th/wiki/element")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def เซตการ์ด(self, ctx):
+        """คำสั่งเปิดเว็ปเซตการ์ดของอาชีพต่างๆ"""
+        await bot.say("https://www.prtwiki.in.th/wiki/set-card")
+
 bot.add_cog(Ragnarok())
 
 
