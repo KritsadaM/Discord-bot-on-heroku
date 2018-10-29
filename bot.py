@@ -90,7 +90,7 @@ class Ragnarok:
         await bot.say("https://misc.prtwiki.in.th/trap")
     
     @commands.command(pass_context=True, no_pm=True)
-    async def ทำอาหาร(self, ctx):
+    async def อาหาร(self, ctx):
         """คำสั่งเปิดเว็ปสำหรับทำอาหาร"""
         await bot.say("https://www.prtwiki.in.th/wiki/cooking")
 
