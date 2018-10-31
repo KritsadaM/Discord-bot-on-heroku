@@ -118,6 +118,11 @@ class Ragnarok:
     async def เซตการ์ด(self, ctx):
         """คำสั่งเปิดเว็ปเซตการ์ดของอาชีพต่างๆ"""
         await bot.say("https://www.prtwiki.in.th/wiki/set-card")
+        
+    @commands.command(pass_context=True, no_pm=True)
+    async def สเตตัส(self, ctx):
+        """คำสั่งเปิดเว็ปคำนวนสเตตัส"""
+        await bot.say("https://stat.prtwiki.in.th/")
 
 bot.add_cog(Ragnarok())
 
