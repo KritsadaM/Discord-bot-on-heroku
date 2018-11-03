@@ -123,6 +123,11 @@ class Ragnarok:
     async def สเตตัส(self, ctx):
         """คำสั่งเปิดเว็ปคำนวนสเตตัส"""
         await bot.say("https://stat.prtwiki.in.th/")
+        
+    @commands.command(pass_context=True, no_pm=True)
+    async def exp(self, ctx):
+        """คำสั่งเปิดเว็ปคำนวนสเตตัส"""
+        await bot.say("https://www.prtwiki.in.th/wiki/base-exp-job-600921")
 
 bot.add_cog(Ragnarok())
 
