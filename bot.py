@@ -6,6 +6,7 @@ from discord.ext.commands import Bot
 import asyncio
 import os
 
+"""
 Wut_list=['วุดดี้','Wut','สัดวุด','สัสวุด']
 possible_responses=[
         'เป็นคนหน้าหม้อ',
@@ -14,7 +15,7 @@ possible_responses=[
         'ทำไมไม่ยอมฮีล',
         'เยี่ยมไปเลยเพื่อน',
 ]
-
+"""
 client = discord.Client()
 
 # @client.event
@@ -48,7 +49,7 @@ client = discord.Client()
 # client.run('NDk5NDU2ODEwNjIxNTk5NzQ0.Dp8r7A.2vbl1VRmCZUFJ8LOR_j2MgDXxhs')
 
 # Enable bot by mention bot with command
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('$'), description='รวมคำสั่งไว้ใช้งานกับบอท')
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('@'), description='รวมคำสั่งไว้ใช้งานกับบอท')
 
 print (discord.__version__)
 
@@ -57,6 +58,7 @@ async def on_ready():
     print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
     print('------')
 
+"""
 @bot.command(pass_context=True, no_pm=True)
 async def Wut():
     """คำสั่งไว้หยอกเล่นกับวุดดี้ (ขำๆ นะเพื่อน)"""
@@ -128,9 +130,22 @@ class Ragnarok:
     async def exp(self, ctx):
         """คำสั่งเปิดเว็ปคำนวนสเตตัส"""
         await bot.say("https://www.prtwiki.in.th/wiki/base-exp-job-600921")
+"""
+    @commands.command(pass_context=True, no_pm=True)
+    async def @(self, ctx, *, arg):
+        """@@123 แปลงเลขฐานสำหรับ Central lab"""
+        #search_message = ("https://revodb.prtwiki.in.th/search?q="+arg)
+        #search_message = search_message.replace(" ", "%20")
+        #await bot.say(search_message)
+        n_num = DecimalToBinary(arg)
+        await bot.say(search_message)
 
 bot.add_cog(Ragnarok())
 
+DecimalToBinary(num):
+        if num > 1:
+            DecimalToBinary(num // 2)
+            return num % 2
 
 #bot.run('NDk5NDU2ODEwNjIxNTk5NzQ0.Dp8r7A.2vbl1VRmCZUFJ8LOR_j2MgDXxhs')
 bot.run(os.environ['BOT_TOKEN'])
