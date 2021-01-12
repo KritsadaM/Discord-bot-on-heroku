@@ -138,7 +138,7 @@ async def on_ready():
         #search_message = search_message.replace(" ", "%20")
         #await bot.say(search_message)
         n_num = DecimalToBinary(arg)
-        await bot.say(search_message)
+        await bot.say(n_num)
 
 bot.add_cog(Ragnarok())
 
