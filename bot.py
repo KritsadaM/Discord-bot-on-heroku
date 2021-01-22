@@ -14,7 +14,9 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    await bot.say(message)
+    tmp = f'{int(message):0{8}b}'
+    await bot.say(tmp)
+    await bot.process_commands(message)
 
 @bot.command()
 async def say(msg,*,message):
