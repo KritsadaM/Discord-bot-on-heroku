@@ -23,7 +23,7 @@ async def t(msg,*,message):
     #Repeats whatever user types after the .say
     tmp = f'{int(message):0{8}b}'
     string = tmp[0:4]+ " "+ tmp[4:4]
-    return await msg.send("Message: " + message +"\tTemp :"+string))
+    return await msg.send("Message: " + message +"\tTemp :"+string)
 
 @bot.command()
 async def greet(msg):
