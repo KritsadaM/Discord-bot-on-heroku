@@ -21,7 +21,7 @@ async def say(msg,*,message):
 @bot.command()
 async def t(msg,*,message):
     #Repeats whatever user types after the .say
-    tmp = "{0:#b}".format(int(message))
+    tmp = "{0:b}".format(int(message))
     return await msg.send("Message: " + message +"\tTemp :"+str(tmp))
 
 @bot.command()
