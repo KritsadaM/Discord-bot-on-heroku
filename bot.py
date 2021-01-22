@@ -16,7 +16,7 @@ async def on_ready():
 async def on_message(message):
     if "@@" in message.content:
         tmp = message.content[2:]
-        tmp = f'{int(message):0{8}b}'
+        tmp = f'{int(tmp):0{8}b}'
         await bot.say(tmp)
         await bot.process_commands(message)
 
