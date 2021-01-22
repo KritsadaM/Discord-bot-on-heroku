@@ -8,25 +8,24 @@ import os
 
 client = discord.Client()
 
-# Enable bot by mention bot with command
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('@'), description='รวมคำสั่งไว้ใช้งานกับบอท')
-
 print (discord.__version__)
 
-@bot.event
-async def on_ready():
-    print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
-    print('------')
+@client.event
+async def on_message(message):
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
 
-    @commands.command(pass_context=True, no_pm=True)
-    async def aaa(self, ctx, *, arg):
-        n_num = DecimalToBinary(arg)
-        await bot.say(n_num)
-
-    async def on_message(message):
-        #if message.author.bot:
-        #    return
-        await bot.say(message.content)
+    #if message.content.startswith('!hello'):
+    #    msg = 'Hello {0.author.mention}'.format(message)
+    #    await client.send_message(message.channel, msg)
+    if client.user.name in message.content:
+        if message.content == "bitcoin":
+            response = requests.get(url)
+            value = response.json() ['bpi']['USD']['rate']
+            await client.send_message(message.channel, "Bitcoin price is: $" + value)
+        if "@@" in message.content:
+            await client.send_message(message.channel, "Found it !!!")
 
 def DecimalToBinary(num):
     if num > 1:
