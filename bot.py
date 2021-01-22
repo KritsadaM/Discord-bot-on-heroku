@@ -10,9 +10,7 @@ async def on_ready():
     print(bot.user.name, "is ready!")
 
 @bot.event
-async def on_message():
-    if message.author == bot.user.name:
-        return
+async def on_message(message):
     await bot.say(message)
 
 @bot.command()
