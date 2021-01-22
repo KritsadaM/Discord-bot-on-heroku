@@ -40,6 +40,7 @@ from discord.ext import commands
 
 
 client = discord.Client()
+noticeme = 'notice me senpai'
 
 @client.event
 async def on_message(message):
@@ -52,8 +53,14 @@ async def on_message(message):
         tmp = f'{int(tmp):0{8}b}'
         await client.send(str(tmp))
 
-    await client.send_message(message.channel, msg)
-    
+    author = message.author
+    authorid = message.author.id
+    print ("@{} user sent a message. (id: {})".format(author, authorid))
+
+    if message.content == noticeme:
+        print ('I noticed you @{}!'.format(authorid))
+        await client.send_message(message.channel, 'I noticed you @{}!'.format(author))
+
     #if message.content.startswith('!hello'):
     #    msg = 'Hello {0.author.mention}'.format(message)
     #    await client.send_message(message.channel, msg)
