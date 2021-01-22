@@ -12,7 +12,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user.name:
         return
-    bot.say(message)
+    await bot.say(message)
 
 @bot.command()
 async def say(msg,*,message):
