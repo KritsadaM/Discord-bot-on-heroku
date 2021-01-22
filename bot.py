@@ -32,4 +32,4 @@ def DecimalToBinary(num):
         DecimalToBinary(num // 2)
         return num % 2
 
-bot.run(os.environ['BOT_TOKEN'])
+client.run(os.environ['BOT_TOKEN'])
