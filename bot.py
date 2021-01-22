@@ -22,7 +22,10 @@ async def say(msg,*,message):
 async def t(msg,*,message):
     #Repeats whatever user types after the .say
     tmp = DecimalToBinary(int(message))
-    return await msg.send("Message: " + message +"\tTemp"+str(tmp))
+    if int(message) > 1:
+        DecimalToBinary(int(message) // 2)
+        tmp1=int(message) % 2
+    return await msg.send("Message: " + message +"\tTemp :"+str(tmp)+"Temp1 : "+str(tmp1))
 
 @bot.command()
 async def greet(msg):
