@@ -2,33 +2,35 @@ import os
 import discord
 import random
 from discord.ext import commands
-import asyncio
-import os
 
-client = discord.Client()
+bot=commands.Bot(command_prefix='.')
 
-print (discord.__version__)
-
-@client.event
+@bot.event
 async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
+    print(bot.user.name, "is ready!")
 
-@client.event
 async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
+    if message.author == bot.user.name:
         return
-    if "@@" in message.content:
-        await client.send(message.channel, "Found it !!!")
-    
-    await client.send(message)
+    bot.say(message)
+
+@bot.command()
+async def say(msg,*,message):
+    #Repeats whatever user types after the .say
+    return await msg.send(message)
+
+
+
+@bot.command()
+async def greet(msg):
+    #Greets the user with random begining everytime
+    greetings=['Hello there','Hi there','Hiya','Hello','Hi']
+    return await msg.send(f"{random.choice(greetings)} {msg.author.name}")
 
 def DecimalToBinary(num):
     if num > 1:
         DecimalToBinary(num // 2)
         return num % 2
 
-client.run(os.environ['BOT_TOKEN'])
+bot.run(os.getenv('BOT_TOKEN')) #NOTE: Replace the word BOT_TOKEN with the name of your Config Var name representing your bot token
+
