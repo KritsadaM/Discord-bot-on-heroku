@@ -12,7 +12,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user.name:
         return
-    await bot.say(message)
+    return await bot.say(message)
 
 @bot.command()
 async def say(msg,*,message):
@@ -32,5 +32,5 @@ def DecimalToBinary(num):
         DecimalToBinary(num // 2)
         return num % 2
 
-bot.run(os.getenv('BOT_TOKEN')) #NOTE: Replace the word BOT_TOKEN with the name of your Config Var name representing your bot token
+bot.run(os.environ['BOT_TOKEN']) #NOTE: Replace the word BOT_TOKEN with the name of your Config Var name representing your bot token
 
