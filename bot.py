@@ -23,9 +23,6 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    #if message.content.startswith('!hello'):
-    #    msg = 'Hello {0.author.mention}'.format(message)
-    #    await client.send_message(message.channel, msg)
     if client.user.name in message.content:
         if message.content == "bitcoin":
             response = requests.get(url)
@@ -34,7 +31,7 @@ async def on_message(message):
         if "@@" in message.content:
             await client.send_message(message.channel, "Found it !!!")
     
-    await client.send_message(message.channel,message.content)
+    await client.say(message.content)
 
 def DecimalToBinary(num):
     if num > 1:
