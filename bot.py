@@ -9,7 +9,7 @@ import os
 client = discord.Client()
 
 # Enable bot by mention bot with command
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('@'), description='รวมคำสั่งไว้ใช้งานกับบอท')
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('$'), description='รวมคำสั่งไว้ใช้งานกับบอท')
 
 print (discord.__version__)
 
@@ -29,12 +29,9 @@ async def on_ready():
         if "@@" in message.content:
             bot.say("Found @@")
 
-#bot.add_cog(Ragnarok())
-
 def DecimalToBinary(num):
     if num > 1:
         DecimalToBinary(num // 2)
         return num % 2
 
-#bot.run('DV24555gNyZihn6XAKD_uBLkh9vlHCP6vJEE8LoGQOSKXj8BMVPoH_PSPwMIkfsiSrJf')
 bot.run(os.environ['BOT_TOKEN'])
