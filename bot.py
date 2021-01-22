@@ -51,6 +51,9 @@ async def on_message(message):
         tmp = message.content[2:]
         tmp = f'{int(tmp):0{8}b}'
         await client.send(str(tmp))
+
+    await client.send_message(message.channel, msg)
+    
     #if message.content.startswith('!hello'):
     #    msg = 'Hello {0.author.mention}'.format(message)
     #    await client.send_message(message.channel, msg)
