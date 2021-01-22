@@ -9,9 +9,9 @@ bot=commands.Bot(command_prefix='.')
 async def on_ready():
     print(bot.user.name, "is ready!")
 
-@bot.event
-async def on_message(message):
-    await bot.say(message)
+# @bot.event
+# async def on_message(message):
+#     await bot.say(message)
 
 @bot.command()
 async def say(msg,*,message):
