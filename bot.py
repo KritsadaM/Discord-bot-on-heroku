@@ -51,15 +51,7 @@ async def on_message(message):
     if "@@" in message.content:
         tmp = message.content[2:]
         tmp = f'{int(tmp):0{8}b}'
-        await message.channel.sendd(str(tmp))
-
-    author = message.author
-    authorid = message.author.id
-    print ("@{} user sent a message. (id: {})".format(author, authorid))
-
-    if message.content == noticeme:
-        print ('I noticed you @{}!'.format(authorid))
-        await message.channel.send("Test")
+        await message.channel.send(str(tmp))
 
     #if message.content.startswith('!hello'):
     #    msg = 'Hello {0.author.mention}'.format(message)
