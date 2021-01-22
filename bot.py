@@ -14,12 +14,12 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    return await send_message(
+    await bot.say(message)
 
 @bot.command()
 async def say(msg,*,message):
     #Repeats whatever user types after the .say
-    await bot.say(message)
+    return await msg.send(message)
 
 @bot.command()
 async def t(msg,*,message):
