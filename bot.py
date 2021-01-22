@@ -9,6 +9,7 @@ bot=commands.Bot(command_prefix='.')
 async def on_ready():
     print(bot.user.name, "is ready!")
 
+@bot.event
 async def on_message(message):
     if message.author == bot.user.name:
         return
