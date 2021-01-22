@@ -33,6 +33,8 @@ async def on_message(message):
             await client.send_message(message.channel, "Bitcoin price is: $" + value)
         if "@@" in message.content:
             await client.send_message(message.channel, "Found it !!!")
+    
+    await client.send_message(message.channel,message.content)
 
 def DecimalToBinary(num):
     if num > 1:
