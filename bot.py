@@ -27,11 +27,9 @@ async def on_ready():
         if message.author.bot:
             return
         if "@@" in message.content:
-            bot.say("Found @@")
+            await bot.say("Found @@")
 
 def DecimalToBinary(num):
     if num > 1:
         DecimalToBinary(num // 2)
         return num % 2
-
-bot.run(os.environ['BOT_TOKEN'])
