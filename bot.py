@@ -23,7 +23,7 @@ async def on_ready():
         n_num = DecimalToBinary(arg)
         await bot.say(n_num)
 
-bot.add_cog(Ragnarok())
+#bot.add_cog(Ragnarok())
 
 def DecimalToBinary(num):
     if num > 1:
