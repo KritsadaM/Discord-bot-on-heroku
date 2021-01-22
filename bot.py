@@ -7,22 +7,23 @@ bot=commands.Bot(command_prefix='.')
 
 @bot.event
 async def on_ready():
-    print(bot.user.name, "is ready!")
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('------')
 
-# @bot.event
-# async def on_message(message):
-#     await bot.say(message)
+@bot.event
+async def on_message(message):
+    return await send_message(
 
 @bot.command()
 async def say(msg,*,message):
     #Repeats whatever user types after the .say
-    return await msg.send(message)
+    await bot.say(message)
 
 @bot.command()
 async def t(msg,*,message):
-    #Repeats whatever user types after the .say
     tmp = f'{int(message):0{8}b}'
-    #string = str(tmp[0:4])+' '+str(tmp[4:4])
     return await msg.send("Message : " + message +"\tTemp : "+str(tmp))
 
 @bot.command()
