@@ -27,7 +27,7 @@ async def on_ready():
         if message.author.bot:
             return
         if "@@" in message.content:
-            bot.say("Found @@")
+            await bot.say("Found @@")
 
 #bot.add_cog(Ragnarok())
 
