@@ -21,7 +21,7 @@ async def say(msg,*,message):
 @bot.command()
 async def t(msg,*,message):
     #Repeats whatever user types after the .say
-    return await msg.send(DecimalToBinary(message))
+    return await msg.send(DecimalToBinary(int(message))
 
 @bot.command()
 async def greet(msg):
