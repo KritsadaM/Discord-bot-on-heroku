@@ -26,8 +26,8 @@ async def on_ready():
     async def on_message(message):
         if message.author.bot:
             return
-        if message.content~='@@'
-            bot.say("TEST")
+        if "@@" in message.content:
+            bot.say("Found @@")
 
 #bot.add_cog(Ragnarok())
 
