@@ -21,22 +21,14 @@ async def say(msg,*,message):
 @bot.command()
 async def t(msg,*,message):
     #Repeats whatever user types after the .say
-    tmp = DecimalToBinary(int(message))
-    if int(message) > 1:
-        DecimalToBinary(int(message) // 2)
-        tmp1=int(message) % 2
-    return await msg.send("Message: " + message +"\tTemp :"+str(tmp)+"Temp1 : "+str(tmp1))
+    tmp = "{0:#b}".format(int(message))
+    return await msg.send("Message: " + message +"\tTemp :"+str(tmp))
 
 @bot.command()
 async def greet(msg):
     #Greets the user with random begining everytime
     greetings=['Hello there','Hi there','Hiya','Hello','Hi']
     return await msg.send(f"{random.choice(greetings)} {msg.author.name}")
-
-def DecimalToBinary(num):
-    if num > 1:
-        DecimalToBinary(num // 2)
-        return num % 2
 
 bot.run(os.environ['BOT_TOKEN']) #NOTE: Replace the word BOT_TOKEN with the name of your Config Var name representing your bot token
 
