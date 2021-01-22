@@ -23,6 +23,12 @@ async def on_ready():
         n_num = DecimalToBinary(arg)
         await bot.say(n_num)
 
+    async def on_message(message):
+        if message.author.bot:
+            return
+        if message.content~='@@'
+            bot.say("TEST")
+
 #bot.add_cog(Ragnarok())
 
 def DecimalToBinary(num):
